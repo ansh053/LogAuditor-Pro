@@ -5,34 +5,36 @@ A production-grade, end-to-end unsupervised machine learning system designed to 
 ---
 
 ## 📂 Project Architecture
-
+```
 ├── data cleaning.ipynb               # Jupyter Notebook for EDA, data preprocessing, and model benchmarking
 ├── train.py                          # Automated production script to fit and serialize ML model components
 ├── app.py                            # Streamlit web application interface for real-time security log auditing
 ├── logging_monitoring_anomalies.csv  # Raw data source containing historical infrastructure log snapshots
 ├── requirements.txt                  # System-wide python dependencies 
 └── LICENSE                           # MIT Open Source License
-
+```
 ---
 
 ## 🛠️ Installation & Environment Setup
 
 Ensure you have Python 3.9+ installed on your local workstation. Follow these steps to spin up the system:
 
-1. Clone or Navigate to the Workspace Repository:
-   $ cd path/to/your/project-directory
+**1. Clone or Navigate to the Workspace Repository:**
 
-2. Initialize a Virtual Environment (Recommended):
+         cd path/to/your/project-directory
+
+**2. Initialize a Virtual Environment (Recommended):**
    # Windows
-   $ python -m venv venv
-   $ .\venv\Scripts\activate
+      python -m venv venv
+      .\venv\Scripts\activate
 
    # macOS/Linux
-   $ python3 -m venv venv
-   $ source venv/bin/activate
+      python3 -m venv venv
+      source venv/bin/activate
 
-3. Install Core System Dependencies:
-   $ pip install -r requirements.txt
+**3. Install Core System Dependencies:**
+               
+      pip install -r requirements.txt
 
 ---
 
@@ -45,7 +47,8 @@ Open this notebook inside VS Code or standard Jupyter to view comprehensive Expl
 
 ### Step 2: Model Training & Serialization (train.py)
 Run the core training pipeline script to parse timestamps, separate categorical/numerical spaces, train the multi-threaded Isolation Forest backend, and generate local persistent artifacts.
-$ python train.py
+
+      python train.py
 
 Expected Outputs on Success:
 - anomaly_model.joblib (Trained Unsupervised Isolation Forest model)
@@ -54,4 +57,5 @@ Expected Outputs on Success:
 
 ### Step 3: Launching the Security Audit Dashboard (app.py)
 Once your training pipeline outputs the required serialization files, start the internal Streamlit web app interface:
-$ streamlit run app.py
+      
+      streamlit run app.py
